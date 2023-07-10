@@ -60,7 +60,7 @@ app.put("/products/:id", (request, response) => {
     createProductFile()
 
     if (productIndex == -1) {
-        return response.json({ message: "producto con el ID " + id + " no existe! SAPO CAGON" }, 404)
+        return response.json({ message: "producto con el ID " + id + " no existe!" }, 404)
     }
     console.log(productIndex)
     return response.json({ message: "producto alterado con exito" })
@@ -71,7 +71,7 @@ app.delete("/products/:id", (request, response) => {
     const productIndex = products.findIndex(product => product.id === id);
 
     if (productIndex == -1) {
-        return response.json({ message: "producto con el ID " + id + " no existe. MO SE PUEDE ELIMINAR! SAPO CAGON" }, 404)
+        return response.json({ message: "producto con el ID " + id + " no existe!" }, 404)
     }
     
     products.splice(productIndex, 1);
